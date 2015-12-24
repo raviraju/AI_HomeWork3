@@ -1,0 +1,112 @@
+No of Queries : 1
+No of Clauses : 31
+================================================================================
+Predicate					Rules
+A
+					 B( x2,) ^ C( x2,) ^ => A( x2,) 
+AA
+					Fact : AA( Bob, John,) 
+AB
+					Fact : AB( Random, Sub, Randomm,) 
+American
+					Fact : American( West,) 
+B
+					Fact : B( John,) 
+BB
+					Fact : BB( Bob,) 
+C
+					 D( x3,) ^ => C( x3,) 
+CC
+					 AA( x5, John,) ^ BB( Bob,) ^ => CC( Tom,) 
+Criminal
+					 American( x7,) ^ Weapon( y2,) ^ Sells( x7, y2, z,) ^ Hostile( z,) ^ => Criminal( x7,) 
+D
+					 C( x4,) ^ => D( x4,) 
+Enemy
+					Fact : Enemy( Nono, America,) 
+F
+					 G( x, y,) ^ => F( y, x,) 
+FA
+					 AB( x12, y4, z2,) ^ => FA( x12, y4, y4,) 
+G
+					Fact : G( SS, S,) 
+					 F( S, SS,) ^ => G( x1, y1,) 
+GA
+					 FA( y3, y3, x11,) ^ RA( z1,) ^ => GA( z1,) 
+Hostile
+					 Enemy( x10, America,) ^ => Hostile( x10,) 
+Missile
+					Fact : Missile( MONE,) 
+Owns
+					Fact : Owns( Nono, MONE,) 
+RA
+					Fact : RA( Add,) 
+SE
+					 SEEE( x16,) ^ => SE( x16,) 
+SEE
+					 SE( x15,) ^ => SEE( x15,) 
+SEEE
+					Fact : SEEE( Bob,) 
+Sells
+					 Missile( x8,) ^ Owns( Nono, x8,) ^ => Sells( West, x8, Nono,) 
+T
+					Fact : T( A,) 
+					 T( A,) ^ => T( B,) 
+					 T( x6,) ^ => T( C,) 
+TS
+					 Test( x13, x13,) ^ => TS( A,) 
+					 Test( x14, y5,) ^ => TS( T,) 
+Test
+					Fact : Test( B, BB,) 
+Weapon
+					 Missile( x9,) ^ => Weapon( x9,) 
+================================================================================
+No of Queries : 1
+
+********************************************
+clearing historyOfGoals
+
+
+
+Handling query : 1 F( B, A,) 
+######################################################################################
+FOL_BC_OR() : predicate goal = F( B, A,)  theta = { }
+Following Rules can be used to prove : F( B, A,) 
+ G( x, y,) ^ => F( y, x,) 
+
+Using rule :  G( x, y,) ^ => F( y, x,) 
+Unification of F( B, A,) with F( y, x,)  is : PASS (with subst) theta = { x/A  y/B  }
+add goal : F( B, A,) ,theta1 : {x/A  y/B  } to historyOfGoals
+goal successfully unified with conclusion of rule :  G( x, y,) ^ => F( y, x,) 
+######################################################################################
+FOL_BC_AND() : predicateList premise_goals = G( x, y,)   theta = { x/A  y/B  }
+Following Rules can be used to prove : G( A, B,) 
+G( SS, S,) 
+ F( S, SS,) ^ => G( x1, y1,) 
+
+Using rule : G( SS, S,) 
+Trying Unification of G( A, B,) with G( SS, S,)  is : FAIL (corresponding constants dont match)
+
+Using rule :  F( S, SS,) ^ => G( x1, y1,) 
+Trying Unification of G( A, B,) with G( x1, y1,)  is : PASS (with subst) theta = { x/A  x1/A  y/B  y1/B  }
+######################################################################################
+FOL_BC_OR() : predicate goal = G( A, B,)  theta = { x/A  x1/A  y/B  y1/B  }
+Following Rules can be used to prove : G( A, B,) 
+G( SS, S,) 
+ F( S, SS,) ^ => G( x1, y1,) 
+
+Using rule : G( SS, S,) 
+Unification of G( A, B,) with G( SS, S,)  is : FAIL (corresponding constants dont match)
+
+Using rule :  F( S, SS,) ^ => G( x1, y1,) 
+Unification of G( A, B,) with G( x1, y1,)  is : PASS (with subst) theta = { x/A  x1/A  y/B  y1/B  }
+add goal : G( A, B,) ,theta1 : {x/A  x1/A  y/B  y1/B  } to historyOfGoals
+goal successfully unified with conclusion of rule :  F( S, SS,) ^ => G( x1, y1,) 
+######################################################################################
+FOL_BC_AND() : predicateList premise_goals = F( S, SS,)   theta = { x/A  x1/A  y/B  y1/B  }
+Following Rules can be used to prove : F( S, SS,) 
+ G( x, y,) ^ => F( y, x,) 
+
+Using rule :  G( x, y,) ^ => F( y, x,) 
+Trying Unification of F( S, SS,) with F( y, x,)  is : FAIL (conflicting Facts for the same variable)
+Cannot Prove Query : F( B, A,) 

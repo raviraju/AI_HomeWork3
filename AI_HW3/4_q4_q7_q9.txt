@@ -1,0 +1,152 @@
+No of Queries : 3
+No of Clauses : 32
+================================================================================
+Predicate					Rules
+AA
+					Fact : AA( A, B, A, B,) 
+AB
+					 CB( x2,) ^ => AB( y2, y2, x2, x2,) 
+AC
+					 CC( y4, x4,) ^ DC( T,) ^ => AC( S, S, T, TT,) 
+AD
+					 RD( S,) ^ => AD( x6, x6,) 
+AE
+					 RE( S,) ^ => AE( x8, x8,) 
+AF
+					 CF( S,) ^ => AF( x10, x10,) 
+					 DF( S,) ^ => AF( m, n,) 
+AG
+					 AGG( x12,) ^ => AG( x12, y9, John,) 
+AGG
+					Fact : AGG( John,) 
+AH
+					 CH( x14, y10,) ^ BH( x14, y10,) ^ => AH( y10,) 
+B
+					 A( A,) ^ => B( A,) 
+					 C( A,) ^ => B( B,) 
+BA
+					 AA( x, y, z, t,) ^ => BA( SE,) 
+BB
+					 AB( x1, y1, z1, t1,) ^ => BB( SE,) 
+BC
+					 AC( y3, x3, z2, t2,) ^ => BC( SEE,) 
+BD
+					Fact : BD( SS, ST,) 
+BE
+					Fact : BE( SS, SS,) 
+BF
+					Fact : BF( Bob, Tom,) 
+BH
+					Fact : BH( B, BB,) 
+C
+					Fact : C( A,) 
+CB
+					Fact : CB( S,) 
+CC
+					Fact : CC( A, AA,) 
+CH
+					Fact : CH( B, BB,) 
+DC
+					Fact : DC( T,) 
+DF
+					Fact : DF( S,) 
+FG
+					 AG( x11, y8, x11,) ^ => FG( y8,) 
+HH
+					 AH( x13,) ^ => HH( z6,) 
+PD
+					 AD( x5, y5,) ^ BD( x5, y5,) ^ => PD( z3,) 
+PE
+					 AE( x7, y6,) ^ BE( x7, y6,) ^ => PE( z4,) 
+PF
+					 AF( x9, y7,) ^ BF( x9, y7,) ^ => PF( z5,) 
+RD
+					Fact : RD( S,) 
+RE
+					Fact : RE( S,) 
+================================================================================
+No of Queries : 3
+
+********************************************
+clearing historyOfGoals
+
+
+
+Handling query : 1 BB( SE,) 
+######################################################################################
+FOL_BC_OR() : predicate goal = BB( SE,)  theta = { }
+Following Rules can be used to prove : BB( SE,) 
+ AB( x1, y1, z1, t1,) ^ => BB( SE,) 
+
+Using rule :  AB( x1, y1, z1, t1,) ^ => BB( SE,) 
+Unification of BB( SE,) with BB( SE,)  is : PASS (with subst) theta = { }
+add goal : BB( SE,) ,theta1 : {} to historyOfGoals
+goal successfully unified with conclusion of rule :  AB( x1, y1, z1, t1,) ^ => BB( SE,) 
+######################################################################################
+FOL_BC_AND() : predicateList premise_goals = AB( x1, y1, z1, t1,)   theta = { }
+Following Rules can be used to prove : AB( x1, y1, z1, t1,) 
+ CB( x2,) ^ => AB( y2, y2, x2, x2,) 
+
+Using rule :  CB( x2,) ^ => AB( y2, y2, x2, x2,) 
+Trying Unification of AB( x1, y1, z1, t1,) with AB( y2, y2, x2, x2,) arg2 : y2 arg1 : x1
+arg2 : y2 arg1 : y1
+ is : FAIL (conflicting variables for the same variable)
+Cannot Prove Query : BB( SE,) 
+
+********************************************
+clearing historyOfGoals
+
+
+
+Handling query : 2 PE( SE,) 
+######################################################################################
+FOL_BC_OR() : predicate goal = PE( SE,)  theta = { }
+Following Rules can be used to prove : PE( SE,) 
+ AE( x7, y6,) ^ BE( x7, y6,) ^ => PE( z4,) 
+
+Using rule :  AE( x7, y6,) ^ BE( x7, y6,) ^ => PE( z4,) 
+Unification of PE( SE,) with PE( z4,)  is : PASS (with subst) theta = { z4/SE  }
+add goal : PE( SE,) ,theta1 : {z4/SE  } to historyOfGoals
+goal successfully unified with conclusion of rule :  AE( x7, y6,) ^ BE( x7, y6,) ^ => PE( z4,) 
+######################################################################################
+FOL_BC_AND() : predicateList premise_goals = AE( x7, y6,)  BE( x7, y6,)   theta = { z4/SE  }
+Following Rules can be used to prove : AE( x7, y6,) 
+ RE( S,) ^ => AE( x8, x8,) 
+
+Using rule :  RE( S,) ^ => AE( x8, x8,) 
+Trying Unification of AE( x7, y6,) with AE( x8, x8,) arg2 : x8 arg1 : x7
+arg2 : x8 arg1 : y6
+ is : FAIL (conflicting variables for the same variable)
+Cannot Prove Query : PE( SE,) 
+
+********************************************
+clearing historyOfGoals
+
+
+
+Handling query : 3 FG( Bob,) 
+######################################################################################
+FOL_BC_OR() : predicate goal = FG( Bob,)  theta = { }
+Following Rules can be used to prove : FG( Bob,) 
+ AG( x11, y8, x11,) ^ => FG( y8,) 
+
+Using rule :  AG( x11, y8, x11,) ^ => FG( y8,) 
+Unification of FG( Bob,) with FG( y8,)  is : PASS (with subst) theta = { y8/Bob  }
+add goal : FG( Bob,) ,theta1 : {y8/Bob  } to historyOfGoals
+goal successfully unified with conclusion of rule :  AG( x11, y8, x11,) ^ => FG( y8,) 
+######################################################################################
+FOL_BC_AND() : predicateList premise_goals = AG( x11, y8, x11,)   theta = { y8/Bob  }
+Following Rules can be used to prove : AG( x11, Bob, x11,) 
+ AGG( x12,) ^ => AG( x12, y9, John,) 
+
+Using rule :  AGG( x12,) ^ => AG( x12, y9, John,) 
+Trying Unification of AG( x11, Bob, x11,) with AG( x12, y9, John,) arg2 : x12 arg1 : x11
+ is : PASS (with subst) theta = { x11/John  x12/x11  y8/Bob  y9/Bob  }
+######################################################################################
+FOL_BC_OR() : predicate goal = AG( John, Bob, John,)  theta = { x11/John  x12/x11  y8/Bob  y9/Bob  }
+Following Rules can be used to prove : AG( John, Bob, John,) 
+ AGG( x12,) ^ => AG( x12, y9, John,) 
+
+Using rule :  AGG( x12,) ^ => AG( x12, y9, John,) 
+Unification of AG( John, Bob, John,) with AG( x12, y9, John,)  is : FAIL (conflicting Facts for the same variable)
+Cannot Prove Query : FG( Bob,) 

@@ -1,0 +1,109 @@
+No of Queries : 1
+No of Clauses : 39
+================================================================================
+Predicate					Rules
+A
+					 C( x1,) ^ => A( x1,) 
+AB
+					 DB( a,) ^ => AB( x4, y1,) 
+AC
+					 BC( x5, y2,) ^ CC( x5, y2,) ^ => AC( z1,) 
+AD
+					Fact : AD( Jam, Bob,) 
+AF
+					Fact : AF( CC, EE,) 
+AH
+					Fact : AH( Bob,) 
+American
+					Fact : American( West,) 
+B
+					 A( x,) ^ => B( x,) 
+BB
+					Fact : BB( Alice, A, A,) 
+BC
+					Fact : BC( John, Alice,) 
+					Fact : BC( John, Bob,) 
+BE
+					Fact : BE( John, A,) 
+BF
+					Fact : BF( KK, LL,) 
+Buffalo
+					Fact : Buffalo( BOB,) 
+C
+					 B( x2,) ^ => C( x2,) 
+CB
+					 AB( x3, y,) ^ BB( x3, y, z,) ^ => CB( x3,) 
+CC
+					Fact : CC( John, Bob,) 
+CD
+					 DD( z3, Bob,) ^ AD( z3, Bob,) ^ => CD( Bob, Alice,) 
+CE
+					Fact : CE( John, B,) 
+CF
+					 AF( x10, z4,) ^ BF( y6, z4,) ^ => CF( AA, BB, x10,) 
+Criminal
+					 American( x6,) ^ Weapon( y3,) ^ Sells( x6, y3, z2,) ^ Hostile( z2,) ^ => Criminal( x6,) 
+DB
+					Fact : DB( S,) 
+DD
+					 MD( y4,) ^ ED( y4,) ^ => DD( James, Bob,) 
+DH
+					 AH( x13,) ^ => DH( x13, x13,) 
+ED
+					Fact : ED( Amy,) 
+EG
+					Fact : EG( B,) 
+Enemy
+					Fact : Enemy( Nono, America,) 
+Faster
+					 Buffalo( x14,) ^ Pig( y9,) ^ => Faster( x14, y9,) 
+HH
+					 DH( z5, y8,) ^ => HH( x12,) 
+Hostile
+					 Enemy( x9, America,) ^ => Hostile( x9,) 
+MD
+					Fact : MD( Amy,) 
+Missile
+					Fact : Missile( MRRR,) 
+Owns
+					Fact : Owns( Nono, MRR,) 
+PE
+					 BE( John, y5,) ^ CE( John, y5,) ^ => PE( John,) 
+Pig
+					Fact : Pig( PAT,) 
+RG
+					 EG( y7,) ^ => RG( Bob, y7,) 
+Sells
+					 Missile( x7,) ^ Owns( Nono, x7,) ^ => Sells( West, x7, Nono,) 
+TG
+					 RG( x11, x11,) ^ => TG( S,) 
+Weapon
+					 Missile( x8,) ^ => Weapon( x8,) 
+================================================================================
+No of Queries : 1
+
+********************************************
+clearing historyOfGoals
+
+
+
+Handling query : 1 HH( Adam,) 
+######################################################################################
+FOL_BC_OR() : predicate goal = HH( Adam,)  theta = { }
+Following Rules can be used to prove : HH( Adam,) 
+ DH( z5, y8,) ^ => HH( x12,) 
+
+Using rule :  DH( z5, y8,) ^ => HH( x12,) 
+Unification of HH( Adam,) with HH( x12,)  is : PASS (with subst) theta = { x12/Adam  }
+add goal : HH( Adam,) ,theta1 : {x12/Adam  } to historyOfGoals
+goal successfully unified with conclusion of rule :  DH( z5, y8,) ^ => HH( x12,) 
+######################################################################################
+FOL_BC_AND() : predicateList premise_goals = DH( z5, y8,)   theta = { x12/Adam  }
+Following Rules can be used to prove : DH( z5, y8,) 
+ AH( x13,) ^ => DH( x13, x13,) 
+
+Using rule :  AH( x13,) ^ => DH( x13, x13,) 
+Trying Unification of DH( z5, y8,) with DH( x13, x13,) arg2 : x13 arg1 : z5
+arg2 : x13 arg1 : y8
+ is : FAIL (conflicting variables for the same variable)
+Cannot Prove Query : HH( Adam,) 

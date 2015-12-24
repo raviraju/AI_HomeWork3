@@ -1,0 +1,71 @@
+No of Queries : 1
+No of Clauses : 21
+================================================================================
+Predicate					Rules
+A
+					 E( XX,) ^ => A( a, b, c, CC, a,) 
+AA
+					 EA( XX,) ^ => AA( a1, b1, c1, CC, a1,) 
+AC
+					Fact : AC( AC,) 
+AD
+					Fact : AD( Set,) 
+B
+					Fact : B( John,) 
+BA
+					Fact : BA( John,) 
+BB
+					Fact : BB( Set,) 
+					 CB( x2,) ^ => BB( SB,) 
+					 DB( x3,) ^ DB( y2,) ^ => BB( RB,) 
+BC
+					Fact : BC( AC, O,) 
+					Fact : BC( AC, IC,) 
+C
+					 A( x, AA, y, CC, w,) ^ B( John,) ^ D( x, w,) ^ => C( CC,) 
+CA
+					 AA( x1, AA, y1, CC, w1,) ^ BA( John,) ^ DA( x1, w1,) ^ => CA( CC,) 
+CC
+					 AC( x4,) ^ BC( x4, y3,) ^ => CC( x4, y3,) 
+D
+					Fact : D( XX, XX,) 
+DA
+					Fact : DA( XX, YY,) 
+DB
+					Fact : DB( TB,) 
+DD
+					 AD( x5,) ^ => DD( x5,) 
+					 BD( y4,) ^ => DD( y4,) 
+E
+					Fact : E( XX,) 
+EA
+					Fact : EA( XX,) 
+================================================================================
+No of Queries : 1
+
+********************************************
+clearing historyOfGoals
+
+
+
+Handling query : 1 C( CC,) 
+######################################################################################
+FOL_BC_OR() : predicate goal = C( CC,)  theta = { }
+Following Rules can be used to prove : C( CC,) 
+ A( x, AA, y, CC, w,) ^ B( John,) ^ D( x, w,) ^ => C( CC,) 
+
+Using rule :  A( x, AA, y, CC, w,) ^ B( John,) ^ D( x, w,) ^ => C( CC,) 
+Unification of C( CC,) with C( CC,)  is : PASS (with subst) theta = { }
+add goal : C( CC,) ,theta1 : {} to historyOfGoals
+goal successfully unified with conclusion of rule :  A( x, AA, y, CC, w,) ^ B( John,) ^ D( x, w,) ^ => C( CC,) 
+######################################################################################
+FOL_BC_AND() : predicateList premise_goals = A( x, AA, y, CC, w,)  B( John,)  D( x, w,)   theta = { }
+Following Rules can be used to prove : A( x, AA, y, CC, w,) 
+ E( XX,) ^ => A( a, b, c, CC, a,) 
+
+Using rule :  E( XX,) ^ => A( a, b, c, CC, a,) 
+Trying Unification of A( x, AA, y, CC, w,) with A( a, b, c, CC, a,) arg2 : a arg1 : x
+arg2 : c arg1 : y
+arg2 : a arg1 : w
+ is : FAIL (conflicting variables for the same variable)
+Cannot Prove Query : C( CC,) 
